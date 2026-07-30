@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>EduBridge South Sudan</title>
-</head>
-<body>
-    <h1>Welcome to EduBridge South Sudan</h1>
-    <p>Your gateway to learning, scholarships, mentorship, and career opportunities.</p>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}
+Home | EduBridge South Sudan
+{% endblock %}
+
+{% block content %}
+
+<div class="text-center py-5">
+
+    <h1 class="display-4">
+        Welcome to EduBridge South Sudan
+    </h1>
+
+    <p class="lead">
+        Connecting South Sudanese and refugee youth with
+        education, scholarships, mentorship, internships,
+        and career opportunities.
+    </p>
+
+    <a href="#" class="btn btn-primary btn-lg">
+        Get Started
+    </a>
+
+</div>
+
+{% endblock %}
