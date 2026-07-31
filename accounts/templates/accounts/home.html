@@ -23,5 +23,10 @@ Home | EduBridge South Sudan
     </a>
 
 </div>
+{% if user.is_authenticated %}
+    <p class="text-success">Logged in as {{ user.username }}</p>
+{% else %}
+    <p class="text-danger">Not logged in</p>
+{% endif %}
 
 {% endblock %}
