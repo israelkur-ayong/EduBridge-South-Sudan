@@ -44,13 +44,52 @@ Dashboard | EduBridge South Sudan
         </div>
 
         <div class="col-md-3 mb-3">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h5>Profile</h5>
-                    <p>Complete your profile</p>
+    <div class="card shadow-sm h-100">
+        <div class="card-body text-center">
+
+            {% if profile.profile_picture %}
+                <img src="{{ profile.profile_picture.url }}"
+                     alt="Profile Picture"
+                     class="rounded-circle mb-3"
+                     width="80"
+                     height="80">
+            {% else %}
+                <div class="rounded-circle bg-secondary text-white
+                            d-flex align-items-center justify-content-center
+                            mx-auto mb-3"
+                     style="width: 80px; height: 80px;">
+                    <span class="fs-3">
+                        {{ user.first_name|first|default:user.username|first|upper }}
+                    </span>
                 </div>
+            {% endif %}
+
+            <h5>
+                {{ user.first_name|default:user.username }}
+            </h5>
+
+            {% if profile.course %}
+                <p class="text-muted mb-1">
+                    {{ profile.course }}
+                </p>
+            {% endif %}
+
+            {% if profile.country %}
+                <small class="text-muted">
+                    {{ profile.country }}
+                </small>
+            {% endif %}
+
+            <div class="mt-3">
+                <a href="{% url 'edit_profile' %}"
+                   class="btn btn-primary btn-sm">
+                    Edit Profile
+                </a>
             </div>
+
         </div>
+    </div>
+</div>
 
     </div>
 
