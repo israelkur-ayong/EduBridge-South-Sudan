@@ -13,3 +13,14 @@ def dashboard(request):
             "profile": profile,
         }
     )
+@login_required
+def profile(request):
+    profile = request.user.profile
+
+    return render(
+        request,
+        "dashboard/profile.html",
+        {
+            "profile": profile,
+        }
+    )
